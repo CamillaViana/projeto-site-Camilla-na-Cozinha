@@ -4,6 +4,8 @@ Rápido • Prático • Gostoso
 
 Site de receitas desenvolvido como trabalho de Desenvolvimento Web do curso técnico de Desenvolvimento de Sistemas do Instituto Federal (IF Sudeste MG). O projeto reúne as atividades das Unidades 2, 3 e 4: HTML, CSS e JavaScript.
 
+Veja o site: https://github.com/CamillaViana/projeto-site-Camilla-na-Cozinha.git
+
 O que tem no site
 18 receitas em cartões, organizadas por grupos: Salgados, Sopas, Pastas, Bolos, Doces e Bebidas
 Busca por receita ou ingrediente
@@ -34,3 +36,4 @@ Baixe a pasta e abra o arquivo index.html no navegador.
 Autora
 
 Camilla Simões Brandão Viana
+site: https://github.com/CamillaViana/projeto-site-Camilla-na-Cozinha.git
