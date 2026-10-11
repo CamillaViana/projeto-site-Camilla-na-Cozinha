@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Camilla na Cozinha</title>
+
+</head>
+<body>
+
+  <!-- CABEÇALHO -->
+  <header id="topo">
+    <h1>Camilla na Cozinha</h1>
+    <p>Rápido • Prático • Gostoso</p>
+  </header>
+
+  <!-- MENU: cada link leva até a receita (pelo id) -->
+  <nav>
+    <a href="#busca">Buscar</a>
+    <a href="#salgados">Salgados</a>
+    <a href="#sopas">Sopas</a>
+    <a href="#pastas">Pastas</a>
+    <a href="#bolos">Bolos</a>
+    <a href="#doces">Doces</a>
+    <a href="#bebidas">Bebidas</a>
+    <a href="#resumo">Resumo</a>
+    <a href="#sugestao">Sugestão</a>
+  </nav>
+
+  <!-- APRESENTAÇÃO -->
+  <section class="apresentacao">
+    <h2>Bem-vinda ao Camilla na Cozinha!</h2>
+    <p>Receitas simples, práticas e cheias de sabor para facilitar o dia a dia. Aqui você encontra ideias para preparar uma comida gostosa sem complicação — escolha sua receita, coloque a mão na massa e aproveite!</p>
+    <button type="button" id="btn-sortear">Sortear uma receita</button>
+  </section>
+
+  <!-- BUSCA E FILTRO -->
+  <section class="caixa busca" id="busca">
+    <h2>Encontre uma receita</h2>
+    <div class="busca-campos">
+      <input type="search" id="campo-busca" placeholder="Buscar receita ou ingrediente (ex.: frango)" aria-label="Buscar receita">
+      <select id="filtro-categoria" aria-label="Filtrar por categoria">
+        <option value="todas">Todas as categorias</option>
+        <option value="massas">Massas</option>
+        <option value="entradas">Entradas</option>
+        <option value="lanches">Lanches</option>
+        <option value="tortas">Tortas</option>
+        <option value="sopas">Sopas</option>
+        <option value="pastas">Pastas</option>
+        <option value="bolos">Bolos</option>
+        <option value="doces">Doces</option>
+        <option value="bebidas">Bebidas</option>
+      </select>
+      <button type="button" id="btn-limpar">Limpar</button>
+    </div>
+    <p id="resultado-busca"></p>
+    <p id="contador-favoritas"></p>
+  </section>
+
+  <!-- RECEITAS: cada <article> é um cartão. Para criar uma nova, copie um bloco inteiro. -->
+  <main>
+
+    <section class="grupo" id="salgados">
+      <h2>Salgados e refeições</h2>
+      <div class="cartoes">
+
+    <article class="receita" id="panqueca" data-categoria="massas">
+      <h2>Panqueca</h2>
+      <span class="categoria">Massas</span>
+      <img src="imagens/panqueca.jpeg" alt="Panqueca recheada">
+
+      <h3>Massa</h3>
+      <ul>
+        <li>1 ovo</li>
+        <li>1 xícara de farinha de trigo</li>
+        <li>1 xícara de leite</li>
+        <li>1 colher de sopa de óleo</li>
+        <li>1 pitada de sal</li>
+      </ul>
+
+      <h3>Modo de preparo</h3>
+      <p>Bata todos os ingredientes no liquidificador. Faça as panquecas em uma frigideira antiaderente, formando camadas bem fininhas. Quando a massa começar a borbulhar, vire.</p>
+
+      <h3>Sugestões de recheio</h3>
+      <p><strong>Salgados:</strong></p>
+      <ul>
+        <li>Carne moída</li>
+        <li>Frango</li>
+        <li>Queijo</li>
+        <li>Frango com queijo</li>
+        <li>Carne moída com queijo</li>
+      </ul>
+      <p><strong>Doces:</strong></p>
+      <ul>
+        <li>Banana com queijo</li>
+        <li>Doce de leite</li>
+        <li>Banana com doce de leite</li>
+        <li>Banana com queijo e doce de leite</li>
+      </ul>
+
+
+      <h3>Pode congelar?</h3>
+      <p>Sim. Separe as panquecas com papel manteiga ou filme para não grudarem.</p>
+
+      <div class="botoes">
+        <button type="button" class="btn-ver" data-receita="panqueca">Ver receita</button>
+        <button type="button" class="btn-favorito" data-receita="panqueca">Favoritar</button>
+      </div>
+    </article>
+
+    <article class="receita" id="crepioca" data-categoria="massas">
+      <h2>Crepioca</h2>
+      <span class="categoria">Massas</span>
+      <img src="imagens/crepioca.jpeg" alt="Crepioca recheada">
+
+      <h3>Ingredientes</h3>
+      <ul>
+        <li>1 ovo</li>
+        <li>2 colheres de sopa rasas de tapioca</li>
+        <li>Sal a gosto</li>
+        <li>Temperos</li>
+      </ul>
+
+      <h3>Modo de preparo</h3>
+      <p>Bata tudo e faça na frigideira, como se fosse uma panqueca. Recheie a gosto.</p>
+      <p>Dica: pode colocar orégano ou pimenta na massa.</p>
+
+      <h3>Sugestões de recheio</h3>
+      <ul>
+        <li>Frango desfiado com cenoura e requeijão light</li>
+        <li>Queijo, presunto e tomate</li>
+        <li>Carne moída com requeijão light</li>
+        <li>Creme de ricota temperada</li>
+      </ul>
+
+      <div class="botoes">
+        <button type="button" class="btn-ver" data-receita="crepioca">Ver receita</button>
+        <button type="button" class="btn-favorito" data-receita="crepioca">Favoritar</button>
+      </div>
+    </article>
+
+    <article class="receita" id="pao-de-queijo" data-categoria="lanches">
+      <h2>Pão de Queijo Fake</h2>
+      <span class="categoria">Lanches</span>
+      <img src="imagens/pao-de-queijo.jpeg" alt="Pães de queijo fake em forminhas">
+
+      <h3>Ingredientes</h3>
+      <ul>
+        <li>1 ovo</li>
+        <li>2 colheres de sopa de tapioca</li>
+        <li>2 colheres de sopa de leite</li>
+        <li>1 colher de sopa de fermento em pó para bolo</li>
+        <li>1 pitada de sal</li>
+        <li>2 colheres de sopa de cream cheese (pode substituir por requeijão light ou creme de leite light, na mesma quantidade)</li>
+        <li>100 g de queijo</li>
+      </ul>
+      <p><strong>Rendimento:</strong> até 20 forminhas pequenas de cupcake.</p>
+
+      <h3>Modo de preparo</h3>
+      <ol>
+        <li>Misture o ovo, a tapioca, o leite, o fermento, o sal e o cream cheese (ou a substituição escolhida).</li>
+        <li>Acrescente os 100 g de queijo e misture bem.</li>
+        <li>Coloque a massa em forminhas pequenas de cupcake.</li>
+        <li>Leve ao forno preaquecido por aproximadamente 20 minutos, ou até dourar.</li>
+      </ol>
+
+      <h3>Na airfryer</h3>
+      <p>Pode fazer na airfryer no lugar do forno, usando metade do tempo: cerca de 10 minutos, ou até dourar.</p>
+
+
+      <h3>Pode congelar?</h3>
+      <p>Sim, depois de assado. Para comer, esquente no forno ou na airfryer.</p>
+
+      <div class="botoes">
+        <button type="button" class="btn-ver" data-receita="pao-de-queijo">Ver receita</button>
+        <button type="button" class="btn-favorito" data-receita="pao-de-queijo">Favoritar</button>
+      </div>
+    </article>
+
+    <article class="receita" id="torta" data-categoria="tortas">
+      <h2>Torta de Tapioca de Frango</h2>
+      <span class="categoria">Tortas</span>
+      <img src="imagens/torta.jpeg" alt="Torta de tapioca de frango">
+
+      <h3>Massa</h3>
+      <ul>
+        <li>4 ovos</li>
+        <li>6 colheres de sopa de tapioca</li>
+        <li>1 colher de sopa de fermento em pó</li>
+        <li>1 pitada de sal</li>
+        <li>1 cenoura ralada</li>
+        <li>1 molho de cheiro-verde ou salsa</li>
+      </ul>
+
+      <h3>Recheio</h3>
+      <ul>
+        <li>500 g de frango desfiado</li>
+        <li>4 colheres de sopa de requeijão</li>
+        <li>1 tomate picado</li>
+        <li>100 g de palmito</li>
+      </ul>
+
+      <h3>Modo de preparo</h3>
+      <ol>
+        <li>Misture os ovos, a tapioca, o fermento, o sal, a cenoura ralada e o cheiro-verde até formar uma massa.</li>
+        <li>Coloque metade da massa em uma assadeira untada.</li>
+        <li>Distribua o recheio sobre a massa.</li>
+        <li>Cubra com o restante da massa.</li>
+        <li>Opcionalmente, coloque queijo parmesão por cima.</li>
+        <li>Leve ao forno preaquecido por aproximadamente 25 minutos, ou até dourar.</li>
+      </ol>
+
+      <h3>Na airfryer</h3>
+      <p>Pode fazer na airfryer no lugar do forno, usando metade do tempo: cerca de 12 a 13 minutos, ou até dourar.</p>
+
+
+      <h3>Pode congelar?</h3>
+      <p>Sim, em porções. Esquente no forno antes de servir.</p>
+
+      <div class="botoes">
+        <button type="button" class="btn-ver" data-receita="torta">Ver receita</button>
+        <button type="button" class="btn-favorito" data-receita="torta">Favoritar</button>
+      </div>
+    </article>
+
+    <article class="receita" id="torta-couve-flor" data-categoria="tortas">
+      <h2>Torta de Frango com Couve-flor</h2>
+      <span class="categoria">Tortas</span>
+      <img src="imagens/torta-couve-flor.jpeg" alt="Torta de frango com couve-flor gratinada">
+
+      <h3>Ingredientes</h3>
+      <ul>
+        <li>1 couve-flor triturada crua</li>
+        <li>2 a 3 peitos de frango cozidos e desfiados</li>
+        <li>100 ml de creme de leite fresco</li>
+        <li>1 pote de requeijão</li>
+        <li>Cebola a gosto</li>
+        <li>Alho a gosto</li>
+        <li>Azeite a gosto</li>
+        <li>Parmesão ralado a gosto para gratinar</li>
+      </ul>
+
+      <h3>Modo de preparo</h3>
+      <ol>
+        <li>Refogue o frango desfiado com cebola, azeite e alho.</li>
+        <li>Acrescente a couve-flor triturada crua e refogue por alguns minutos.</li>
+        <li>Adicione o creme de leite fresco e o requeijão.</li>
+        <li>Misture bem e deixe ferver por aproximadamente 3 minutos, até ficar cremoso.</li>
+        <li>Transfira para um refratário.</li>
+        <li>Cubra com parmesão ralado.</li>
+        <li>Leve ao forno preaquecido a 180–200 °C por aproximadamente 30 a 40 minutos, ou até dourar e gratinar.</li>
+      </ol>
+
+      <h3>Dica</h3>
+      <p>Se quiser uma torta mais firme, deixe a couve-flor bem sequinha depois de triturar, para não soltar muita água durante o preparo.</p>
+
+      <h3>Na airfryer</h3>
+      <p>Pode fazer na airfryer no lugar do forno, usando metade do tempo: cerca de 15 a 20 minutos, ou até dourar e gratinar.</p>
+
+      <div class="botoes">
+        <button type="button" class="btn-ver" data-receita="torta-couve-flor">Ver receita</button>
+        <button type="button" class="btn-favorito" data-receita="torta-couve-flor">Favoritar</button>
+      </div>
+    </article>
+
+      </div>
+    </section>
+
+    <section class="grupo" id="sopas">
+      <h2>Sopas</h2>
+      <div class="cartoes">
+
+    <article class="receita" id="creme" data-categoria="sopas">
+      <h2>Creme de Abóbora com Gorgonzola</h2>
+      <span class="categoria">Sopas</span>
+      <img src="imagens/creme.jpeg" alt="Creme de abóbora com gorgonzola">
+
+      <h3>Ingredientes</h3>
+      <ul>
+        <li>500 g de abóbora</li>
+        <li>6 dentes de alho</li>
+        <li>2 cebolas inteiras</li>
+        <li>Sal a gosto</li>
+        <li>2 colheres de sopa de requeijão light</li>
+        <li>1 colher de sopa de creme de leite (opcional)</li>
+        <li>150 g de queijo gorgonzola</li>
+      </ul>
+
+      <h3>Modo de preparo</h3>
+      <ol>
+        <li>Refogue a abóbora com o alho e as cebolas.</li>
+        <li>Tempere com sal a gosto.</li>
+        <li>Cubra as abóboras com água.</li>
+        <li>Deixe ferver por aproximadamente 20 minutos, ou até que as abóboras estejam bem macias e desmanchando.</li>
+        <li>Bata a abóbora cozida no liquidificador com o requeijão light e o creme de leite.</li>
+        <li>Volte o creme para a panela.</li>
+        <li>Acrescente o gorgonzola.</li>
+        <li>Deixe aquecer até ferver, mexendo para incorporar o queijo.</li>
+        <li>Reserve alguns pedaços de gorgonzola para colocar por cima.</li>
+      </ol>
+
+      <h3>Finalização</h3>
+      <p>Coloque os pedaços de gorgonzola por cima na hora de servir.</p>
+
+
+      <h3>Pode congelar?</h3>
+      <p>Sim, mas pode separar um pouco. Ao reaquecer, mexa bem.</p>
+
+      <div class="botoes">
+        <button type="button" class="btn-ver" data-receita="creme">Ver receita</button>
+        <button type="button" class="btn-favorito" data-receita="creme">Favoritar</button>
+      </div>
+    </article>
+
+    <article class="receita" id="sopa-lagarto" data-categoria="sopas">
+      <h2>Sopa de Lagarto com Macarrão</h2>
+      <span class="categoria">Sopas</span>
+      <img src="imagens/sopa-lagarto.jpeg" alt="Sopa de lagarto com macarrão de letrinhas">
+
+      <h3>Ingredientes</h3>
+      <ul>
+        <li>1 kg de lagarto bem limpo (peça ao açougueiro para retirar a gordura)</li>
+        <li>1 cenoura</li>
+        <li>1 pimentão vermelho</li>
+        <li>1 pimentão amarelo</li>
+        <li>2 cebolas pequenas</li>
+        <li>1 cabeça de alho</li>
+        <li>4 batatas médias</li>
+        <li>1 colher de sopa de óleo</li>
+        <li>250 g de macarrão tipo sopa de letrinha</li>
+        <li>1 colher de sopa de páprica doce</li>
+        <li>1 colher de sopa de páprica defumada</li>
+        <li>1 pedaço de alho-poró</li>
+        <li>1 colher de chá de páprica picante (opcional)</li>
+        <li>Sal a gosto</li>
+      </ul>
+
+      <h3>Modo de preparo</h3>
+      <ol>
+        <li>Limpe bem o lagarto, retirando o excesso de gordura. Se possível, peça ao açougueiro para fazer essa parte.</li>
+        <li>Coloque 1 colher de sopa de óleo na panela de pressão.</li>
+        <li>Sele o lagarto dos dois lados, deixando a carne bem douradinha.</li>
+        <li>Acrescente a cenoura, os pimentões, as cebolas, o alho, as batatas e o alho-poró.</li>
+        <li>Tempere com a páprica doce, a páprica defumada e, se quiser, a páprica picante.</li>
+        <li>Coloque sal a gosto.</li>
+        <li>Cubra tudo com água.</li>
+        <li>Tampe a panela e deixe cozinhar por 1 hora na pressão.</li>
+        <li>Depois de cozinhar, retire o lagarto inteiro da panela.</li>
+        <li>Desfie a carne com um garfo.</li>
+        <li>Retire qualquer gordura que ainda tenha ficado na carne.</li>
+        <li>Em uma frigideira, dê uma última fritadinha na carne desfiada, para ficar mais saborosa.</li>
+        <li>Volte a carne para a panela.</li>
+        <li>Acrescente os 250 g de macarrão de letrinhas.</li>
+        <li>Cozinhe até o macarrão ficar no ponto.</li>
+      </ol>
+
+      <h3>Dica da Camilla</h3>
+      <p>A graça dessa sopa é o lagarto ficar bem cozido e desfiado, mas depois receber aquela última fritadinha na frigideira antes de voltar para a sopa. Isso dá um sabor muito melhor à carne.</p>
+
+      <h3>Pode congelar?</h3>
+      <p>Sim, mas congele a sopa sem o macarrão, para ele não ficar mole demais ao descongelar. Ao reaquecer, cozinhe o macarrão na hora.</p>
+
+      <div class="botoes">
+        <button type="button" class="btn-ver" data-receita="sopa-lagarto">Ver receita</button>
+        <button type="button" class="btn-favorito" data-receita="sopa-lagarto">Favoritar</button>
+      </div>
+    </article>
+
+      </div>
+    </section>
+
+    <section class="grupo" id="pastas">
+      <h2>Pastas e entradas</h2>
+      <div class="cartoes">
+
+    <article class="receita" id="babaganoush" data-categoria="entradas">
+      <h2>Babaganoush</h2>
+      <span class="categoria">Entradas</span>
+      <img src="imagens/babaganoush.jpeg" alt="Babaganoush com azeite e páprica">
+
+      <h3>Ingredientes</h3>
+      <ul>
+        <li>2 berinjelas</li>
+        <li>1 cabeça de alho</li>
+        <li>2 colheres de sopa de tahine</li>
+        <li>½ limão</li>
+        <li>2 colheres de sopa de azeite</li>
+        <li>1 pitada de sal</li>
+      </ul>
+
+      <h3>Modo de preparo</h3>
+      <ol>
+        <li>Coloque as berinjelas diretamente na chama do fogão para defumar, virando até ficarem bem murchas e com a casca queimada.</li>
+        <li>Coloque as berinjelas em uma assadeira e leve ao forno preaquecido por aproximadamente 15 minutos, até ficarem bem macias.</li>
+        <li>Envolva a cabeça de alho inteira, com casca, em papel-alumínio e leve ao forno por aproximadamente 10 minutos.</li>
+        <li>Corte as berinjelas ao meio e retire a polpa.</li>
+        <li>Coloque a polpa no processador junto com o alho assado, tahine, limão, azeite e sal.</li>
+        <li>Bata até formar uma pasta cremosa.</li>
+        <li>Leve à geladeira.</li>
+      </ol>
+
+      <h3>Na airfryer</h3>
+      <p>Pode fazer na airfryer no lugar do forno, usando metade do tempo: berinjelas por cerca de 7 a 8 minutos e alho por cerca de 5 minutos.</p>
+
+      <h3>Finalização</h3>
+      <p>Coloque um fio de azeite por cima e salpique 1 colher de chá de páprica defumada. Sirva com pão.</p>
+
+
+      <h3>Pode congelar?</h3>
+      <p>Melhor na geladeira e por poucos dias. Até dá para congelar, mas a textura muda.</p>
+
+      <div class="botoes">
+        <button type="button" class="btn-ver" data-receita="babaganoush">Ver receita</button>
+        <button type="button" class="btn-favorito" data-receita="babaganoush">Favoritar</button>
+      </div>
+    </article>
+
+    <article class="receita" id="guacamole" data-categoria="pastas">
+      <h2>Guacamole da Camilla</h2>
+      <span class="categoria">Pastas</span>
+      <img src="imagens/guacamole.jpeg" alt="Guacamole da Camilla">
+
+      <h3>Ingredientes</h3>
+      <ul>
+        <li>2 avocados maduros ou 1 abacate maduro médio</li>
+        <li>½ limão</li>
+        <li>2 tomates sem sementes, picados</li>
+        <li>20 folhas de coentro, sem os talos</li>
+        <li>2 colheres de sopa cheias de azeite extravirgem</li>
+        <li>Sal a gosto</li>
+        <li>Pimenta, se quiser</li>
+      </ul>
+
+      <h3>Modo de preparo</h3>
+      <ol>
+        <li>Coloque os avocados (ou o abacate) em uma tigela.</li>
+        <li>Amasse com um garfo, deixando alguns pedacinhos para dar textura.</li>
+        <li>Acrescente o ½ limão.</li>
+        <li>Junte os tomates sem sementes picados.</li>
+        <li>Amasse ou misture o coentro e acrescente à preparação.</li>
+        <li>Tempere com sal e, se quiser, pimenta.</li>
+        <li>Finalize com as 2 colheres cheias de azeite extravirgem.</li>
+        <li>Misture tudo delicadamente.</li>
+      </ol>
+
+      <h3>Dica da Camilla para escolher o avocado</h3>
+      <p>Quanto mais molinho e menos escuro (preto) estiver o avocado, melhor.</p>
+
+      <div class="botoes">
+        <button type="button" class="btn-ver" data-receita="guacamole">Ver receita</button>
+        <button type="button" class="btn-favorito" data-receita="guacamole">Favoritar</button>
+      </div>
+    </article>
+
+    <article class="receita" id="hummus" data-categoria="pastas">
+      <h2>Hummus com Tahine</h2>
+      <span class="categoria">Pastas</span>
+      <img src="imagens/hummus.jpeg" alt="Hummus com tahine">
+
+      <h3>Ingredientes</h3>
+      <ul>
+        <li>500 g de grão-de-bico cozido (de lata)</li>
+        <li>1 cabeça de alho</li>
+        <li>2 colheres de sopa de tahine</li>
+        <li>4 colheres de sopa de azeite extravirgem</li>
+        <li>1 pitada de sal</li>
+        <li>Suco de ½ limão</li>
+        <li>100 ml da água da lata ou água filtrada</li>
+      </ul>
+
+      <h3>Modo de preparo</h3>
+      <ol>
+        <li>Escorra o grão-de-bico, mas guarde a água da lata.</li>
+        <li>Coloque o grão-de-bico no processador.</li>
+        <li>Acrescente o tahine, o azeite, o sal, o limão e o alho assado.</li>
+        <li>Bata tudo e vá acrescentando a água da lata aos poucos, até ficar bem cremoso.</li>
+        <li>Prove e ajuste o sal, o limão ou o azeite, se necessário.</li>
+      </ol>
+
+      <h3>Alho assado fácil</h3>
+      <p>Coloque a cabeça de alho inteira, com casca, em papel-alumínio, regue com um pouquinho de azeite e embrulhe. Leve à airfryer (ou ao forno) por cerca de 5 minutos, até ficar macio e aromático. Depois é só espremer os dentes de alho para retirar a polpa.</p>
+
+      <h3>Se o grão-de-bico não for de lata</h3>
+      <ul>
+        <li>Deixe o grão-de-bico de molho de um dia para o outro.</li>
+        <li>Descarte a água do molho e cozinhe na panela de pressão por aproximadamente 15 minutos, ou até ficar bem macio.</li>
+        <li>Não descarte a água do cozimento: ela pode ser usada no preparo do hummus.</li>
+      </ul>
+
+      <h3>Dica</h3>
+      <p>A água do cozimento deixa o hummus especialmente cremoso. E bater o grão-de-bico ainda quente ajuda bastante na textura.</p>
+
+      <div class="botoes">
+        <button type="button" class="btn-ver" data-receita="hummus">Ver receita</button>
+        <button type="button" class="btn-favorito" data-receita="hummus">Favoritar</button>
+      </div>
+    </article>
+
+    <article class="receita" id="coalhada-seca" data-categoria="pastas">
+      <h2>Coalhada Seca Express</h2>
+      <span class="categoria">Pastas</span>
+      <img src="imagens/coalhada-seca.jpeg" alt="Coalhada seca com azeite e pimenta">
+
+      <h3>Ingredientes</h3>
+      <ul>
+        <li>1 xícara de iogurte natural integral sem açúcar</li>
+      </ul>
+
+      <h3>Para finalizar</h3>
+      <ul>
+        <li>Azeite extravirgem</li>
+        <li>Sal</li>
+        <li>Pimenta da Jamaica ou pimenta-do-reino moída na hora</li>
+      </ul>
+
+      <h3>Utensílios</h3>
+      <ul>
+        <li>Filtro de café</li>
+        <li>Suporte de filtro de café</li>
+      </ul>
+
+      <h3>Modo de preparo</h3>
+      <ol>
+        <li>Coloque o iogurte no filtro de café, apoiado no suporte.</li>
+        <li>Leve à geladeira por 2 horas, para o iogurte perder o soro.</li>
+        <li>Quando perder o soro, desenforme.</li>
+        <li>Misture o azeite, o sal e a pimenta a gosto.</li>
+        <li>Sirva como preferir.</li>
+      </ol>
+
+      <div class="botoes">
+        <button type="button" class="btn-ver" data-receita="coalhada-seca">Ver receita</button>
+        <button type="button" class="btn-favorito" data-receita="coalhada-seca">Favoritar</button>
+      </div>
+    </article>
+
+    <article class="receita" id="tahine" data-categoria="pastas">
+      <h2>Tahine Caseiro</h2>
+      <span class="categoria">Pastas</span>
+      <img src="imagens/tahine.jpeg" alt="Tahine caseiro">
+
+      <h3>Ingredientes</h3>
+      <ul>
+        <li>50 g de gergelim branco</li>
+        <li>2 colheres de sopa de azeite extravirgem</li>
+        <li>1 colher de sopa de óleo de coco</li>
+        <li>1 pitada de sal</li>
+      </ul>
+
+      <h3>Modo de preparo</h3>
+      <ol>
+        <li>Coloque o gergelim em uma frigideira antiaderente, formando uma camada fina.</li>
+        <li>Torre em fogo baixo, mexendo sempre, para dourar por igual. Cuidado para não queimar.</li>
+        <li>Retire do fogo e deixe amornar.</li>
+        <li>Coloque o gergelim no mixer ou processador.</li>
+        <li>Acrescente o azeite, o óleo de coco e o sal.</li>
+        <li>Bata por aproximadamente 10 a 15 minutos, parando algumas vezes para mexer e raspar as laterais.</li>
+        <li>Continue batendo até obter uma pasta bem lisa e líquida.</li>
+      </ol>
+
+      <h3>Cuidado</h3>
+      <p>Não deixe o mixer ou processador ligado continuamente por muito tempo, para o aparelho não esquentar. Vá parando durante o processo.</p>
+
+      <h3>Dica</h3>
+      <p>O tahine pode ficar mais espesso no início e ir ficando cremoso conforme o gergelim libera seu óleo.</p>
+
+      <div class="botoes">
+        <button type="button" class="btn-ver" data-receita="tahine">Ver receita</button>
+        <button type="button" class="btn-favorito" data-receita="tahine">Favoritar</button>
+      </div>
+    </article>
+
+    <article class="receita" id="paes" data-categoria="pastas">
+      <h2>Combinações com pães</h2>
+      <span class="categoria">Pastas</span>
+      <img src="imagens/paes.jpeg" alt="Pão árabe com hummus">
+
+      <h3>Com hummus</h3>
+      <ul>
+        <li>Pão árabe + hummus</li>
+        <li>Pão árabe + hummus + frango + alface + queijo</li>
+        <li>Pão + hummus + carne + alface</li>
+        <li>Wrap + hummus + frango + alface + tomate</li>
+      </ul>
+
+      <h3>Com babaganoush</h3>
+      <ul>
+        <li>Pão árabe + babaganoush</li>
+        <li>Pão árabe + babaganoush + frango + alface + queijo</li>
+        <li>Pão + babaganoush + carne + alface</li>
+        <li>Wrap + babaganoush + frango + alface + tomate</li>
+      </ul>
+
+      <h3>Dica</h3>
+      <p>O hummus e o babaganoush podem ser usados como uma pasta cremosa no lugar da maionese, deixando os sanduíches mais saborosos.</p>
+    </article>
+
+      </div>
+    </section>
+
+    <section class="grupo" id="bolos">
+      <h2>Bolos</h2>
+      <div class="cartoes">
+
+    <article class="receita" id="bolo-banana" data-categoria="bolos">
+      <h2>Bolo de Banana com Aveia e Canela</h2>
+      <span class="categoria">Bolos</span>
+      <img src="imagens/bolo-banana.jpeg" alt="Bolo de banana com aveia e canela">
+
+      <h3>Ingredientes</h3>
+      <ul>
+        <li>3 bananas bem maduras</li>
+        <li>½ xícara de aveia em flocos</li>
+        <li>3 ovos</li>
+        <li>2 colheres de sopa de azeite extravirgem ou óleo de coco</li>
+        <li>1 colher de sopa de melado, sucralose culinária ou açúcar mascavo</li>
+        <li>Canela em pó a gosto (opcional)</li>
+        <li>1 colher de sopa de fermento em pó</li>
+        <li>1 mão cheia de castanhas-do-Pará, nozes ou amêndoas picadas</li>
+        <li>Opcional: chia ou linhaça dourada</li>
+      </ul>
+
+      <h3>Modo de preparo</h3>
+      <ol>
+        <li>Bata no liquidificador as bananas, os ovos, a aveia, o azeite (ou óleo de coco), o adoçante e a canela.</li>
+        <li>Passe a massa para uma tigela.</li>
+        <li>Misture as oleaginosas e, se quiser, a chia ou linhaça.</li>
+        <li>Acrescente o fermento por último e misture delicadamente.</li>
+        <li>Coloque em uma forma untada e asse em forno preaquecido a 180 °C, até dourar e passar no teste do palito.</li>
+      </ol>
+
+      <h3>Cobertura de chocolate</h3>
+      <ul>
+        <li>60 g de chocolate meio amargo</li>
+        <li>½ caixinha de creme de leite</li>
+      </ul>
+      <p>Leve os dois ao fogo baixo, mexendo até o chocolate derreter completamente e a cobertura ficar cremosa. Despeje sobre o bolo ainda morno.</p>
+
+      <h3>Cobertura mais leve</h3>
+      <p>Misture canela em pó com sucralose culinária e polvilhe por cima do bolo.</p>
+
+      <h3>Na airfryer</h3>
+      <p>Pode assar na airfryer no lugar do forno, usando metade do tempo, até dourar e passar no teste do palito.</p>
+
+      <h3>Pode congelar?</h3>
+      <p>Sim, em fatias. Se possível, congele sem a cobertura de chocolate.</p>
+
+      <div class="botoes">
+        <button type="button" class="btn-ver" data-receita="bolo-banana">Ver receita</button>
+        <button type="button" class="btn-favorito" data-receita="bolo-banana">Favoritar</button>
+      </div>
+    </article>
+
+    <article class="receita" id="bolo-chocolate" data-categoria="bolos">
+      <h2>Bolo de Chocolate da Vovó</h2>
+      <span class="categoria">Bolos</span>
+      <img src="imagens/bolo-chocolate.jpeg" alt="Bolo de chocolate da vovó">
+
+      <h3>Massa</h3>
+      <ul>
+        <li>1 xícara de chá de leite</li>
+        <li>1 xícara de chá de óleo de girassol</li>
+        <li>2 ovos</li>
+        <li>2 xícaras de chá de farinha de trigo</li>
+        <li>1 xícara de chá de chocolate em pó</li>
+        <li>1 xícara de chá de açúcar</li>
+        <li>1 colher de sopa de fermento em pó</li>
+      </ul>
+
+      <h3>Cobertura</h3>
+      <ul>
+        <li>2 colheres de sopa de manteiga</li>
+        <li>3 colheres de sopa de chocolate em pó</li>
+        <li>1 colher de sopa de leite</li>
+      </ul>
+
+      <h3>Modo de preparo</h3>
+      <p><strong>Massa:</strong> Coloque o leite, o óleo, os ovos, a farinha de trigo, o chocolate em pó e o açúcar no liquidificador. Bata bem até a massa ficar homogênea. Por último, acrescente o fermento em pó e misture delicadamente. Unte e enfarinhe uma forma. Despeje a massa e leve ao forno preaquecido até o bolo estar assado e firme.</p>
+      <p><strong>Cobertura:</strong> Coloque a manteiga, o chocolate em pó e o leite em uma panela. Leve ao fogo baixo, mexendo até formar uma cobertura cremosa. Despeje a cobertura sobre o bolo ainda morno.</p>
+
+      <h3>Na airfryer</h3>
+      <p>Pode assar na airfryer no lugar do forno, usando metade do tempo, até o bolo estar assado e firme.</p>
+
+      <div class="botoes">
+        <button type="button" class="btn-ver" data-receita="bolo-chocolate">Ver receita</button>
+        <button type="button" class="btn-favorito" data-receita="bolo-chocolate">Favoritar</button>
+      </div>
+    </article>
+
+      </div>
+    </section>
+
+    <section class="grupo" id="doces">
+      <h2>Doces</h2>
+      <div class="cartoes">
+
+    <article class="receita" id="panqueca-banana" data-categoria="doces">
+      <h2>Panqueca de Banana</h2>
+      <span class="categoria">Doces</span>
+      <img src="imagens/panqueca-banana.jpeg" alt="Panqueca de banana">
+
+      <h3>Ingredientes</h3>
+      <ul>
+        <li>1 banana amassada</li>
+        <li>2 colheres de sopa de farelo de aveia ou de aveia</li>
+        <li>Canela a gosto, ou 1 colher de chá de baunilha</li>
+      </ul>
+
+      <h3>Modo de preparo</h3>
+      <ol>
+        <li>Amasse bem a banana com um garfo.</li>
+        <li>Acrescente o farelo de aveia (ou a aveia) e a canela (ou a baunilha).</li>
+        <li>Misture bem.</li>
+        <li>Coloque pequenas porções em uma frigideira antiaderente e doure dos dois lados em fogo baixo.</li>
+      </ol>
+
+      <h3>Recheio ou cobertura</h3>
+      <p>Pode servir sem recheio ou escolher o que preferir.</p>
+      <p><strong>Recheio preferido:</strong> Nutella + banana + mel.</p>
+      <p>Também fica deliciosa com chocolate derretido.</p>
+
+      <div class="botoes">
+        <button type="button" class="btn-ver" data-receita="panqueca-banana">Ver receita</button>
+        <button type="button" class="btn-favorito" data-receita="panqueca-banana">Favoritar</button>
+      </div>
+    </article>
+
+    <article class="receita" id="docinho" data-categoria="doces">
+      <h2>Docinho Low Carb de 3 Camadas</h2>
+      <span class="categoria">Doces</span>
+      <img src="imagens/docinho.jpeg" alt="Docinho low carb de 3 camadas em taça">
+
+      <h3>Camada 1: morangos</h3>
+      <ul>
+        <li>Morangos picados</li>
+      </ul>
+
+      <h3>Camada 2: beijinho</h3>
+      <ul>
+        <li>3 colheres de sopa de coco ralado sem açúcar</li>
+        <li>3 colheres de sopa de leite Ninho</li>
+        <li>1 colher de sopa de adoçante culinário</li>
+        <li>1 a 3 colheres de sopa de água morna, até dar o ponto</li>
+      </ul>
+      <p><strong>Preparo:</strong> Misture o coco ralado, o leite Ninho e o adoçante. Acrescente a água morna aos poucos, mexendo até formar um creme ou pasta consistente.</p>
+
+      <h3>Camada 3: ganache low carb</h3>
+      <ul>
+        <li>50 g de chocolate 70% cacau</li>
+        <li>1 colher de sopa de adoçante culinário</li>
+        <li>½ caixinha de creme de leite light</li>
+      </ul>
+      <p><strong>Preparo:</strong> Derreta o chocolate e misture o adoçante. Acrescente o creme de leite e mexa até ficar uma ganache lisa e cremosa.</p>
+
+      <h3>Montagem</h3>
+      <p>Morangos picados, depois o beijinho, depois a ganache. Leve à geladeira por um tempo, para ficar bem geladinho e firme.</p>
+
+      <h3>Dica de apresentação</h3>
+      <p>Monte em um copinho ou taça de vidro transparente, para as três camadas ficarem bem visíveis. Se quiser, finalize com um morango por cima e um pouquinho de coco ralado.</p>
+
+      <div class="botoes">
+        <button type="button" class="btn-ver" data-receita="docinho">Ver receita</button>
+        <button type="button" class="btn-favorito" data-receita="docinho">Favoritar</button>
+      </div>
+    </article>
+
+      </div>
+    </section>
+
+    <section class="grupo" id="bebidas">
+      <h2>Bebidas</h2>
+      <div class="cartoes">
+
+    <article class="receita" id="mojito" data-categoria="bebidas">
+      <h2>Mojito da Camilla</h2>
+      <span class="categoria">Bebidas</span>
+      <img src="imagens/mojito.jpeg" alt="Mojito da Camilla">
+
+      <h3>Ingredientes</h3>
+      <ul>
+        <li>1 maço de hortelã</li>
+        <li>1 Sprite Diet</li>
+        <li>2 copos de rum</li>
+        <li>Muito gelo</li>
+        <li>Rodelas de limão</li>
+      </ul>
+
+      <h3>Modo de preparo</h3>
+      <ol>
+        <li>Higienize a hortelã e amarre todos os ramos juntos.</li>
+        <li>Coloque a hortelã em um recipiente grande.</li>
+        <li>Adicione todos os ingredientes juntos.</li>
+        <li>Vá acrescentando gelo à medida que for derretendo.</li>
+      </ol>
+
+      <h3>Finalização</h3>
+      <p>Aproveite com moderação.</p>
+
+
+      <h3>Pode congelar?</h3>
+      <p>Não. Sirva na hora.</p>
+
+      <div class="botoes">
+        <button type="button" class="btn-ver" data-receita="mojito">Ver receita</button>
+        <button type="button" class="btn-favorito" data-receita="mojito">Favoritar</button>
+      </div>
+    </article>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- TABELA: resumo das receitas -->
+  <section class="caixa" id="resumo">
+    <h2>Resumo das receitas</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Receita</th>
+          <th>Categoria</th>
+          <th>Onde é preparada</th>
+          <th>Pode congelar?</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Panqueca</td>
+          <td>Massas</td>
+          <td>Frigideira</td>
+          <td>Sim</td>
+        </tr>
+        <tr>
+          <td>Crepioca</td>
+          <td>Massas</td>
+          <td>Frigideira</td>
+          <td>—</td>
+        </tr>
+        <tr>
+          <td>Pão de Queijo Fake</td>
+          <td>Lanches</td>
+          <td>Forno (ou airfryer)</td>
+          <td>Sim</td>
+        </tr>
+        <tr>
+          <td>Torta de Tapioca de Frango</td>
+          <td>Tortas</td>
+          <td>Forno (ou airfryer)</td>
+          <td>Sim</td>
+        </tr>
+        <tr>
+          <td>Torta de Frango com Couve-flor</td>
+          <td>Tortas</td>
+          <td>Forno (ou airfryer)</td>
+          <td>—</td>
+        </tr>
+        <tr>
+          <td>Creme de Abóbora com Gorgonzola</td>
+          <td>Sopas</td>
+          <td>Panela</td>
+          <td>Sim</td>
+        </tr>
+        <tr>
+          <td>Sopa de Lagarto com Macarrão</td>
+          <td>Sopas</td>
+          <td>Panela de pressão e frigideira</td>
+          <td>Sim (sem o macarrão)</td>
+        </tr>
+        <tr>
+          <td>Babaganoush</td>
+          <td>Entradas</td>
+          <td>Fogão e forno (ou airfryer)</td>
+          <td>Melhor não</td>
+        </tr>
+        <tr>
+          <td>Guacamole da Camilla</td>
+          <td>Pastas</td>
+          <td>Sem cozimento</td>
+          <td>—</td>
+        </tr>
+        <tr>
+          <td>Hummus com Tahine</td>
+          <td>Pastas</td>
+          <td>Processador (alho na airfryer ou forno)</td>
+          <td>—</td>
+        </tr>
+        <tr>
+          <td>Coalhada Seca Express</td>
+          <td>Pastas</td>
+          <td>Geladeira (sem cozimento)</td>
+          <td>—</td>
+        </tr>
+        <tr>
+          <td>Tahine Caseiro</td>
+          <td>Pastas</td>
+          <td>Frigideira e processador</td>
+          <td>—</td>
+        </tr>
+        <tr>
+          <td>Bolo de Banana com Aveia e Canela</td>
+          <td>Bolos</td>
+          <td>Forno (ou airfryer)</td>
+          <td>Sim</td>
+        </tr>
+        <tr>
+          <td>Bolo de Chocolate da Vovó</td>
+          <td>Bolos</td>
+          <td>Forno (ou airfryer)</td>
+          <td>—</td>
+        </tr>
+        <tr>
+          <td>Panqueca de Banana</td>
+          <td>Doces</td>
+          <td>Frigideira</td>
+          <td>—</td>
+        </tr>
+        <tr>
+          <td>Docinho Low Carb de 3 Camadas</td>
+          <td>Doces</td>
+          <td>Geladeira</td>
+          <td>—</td>
+        </tr>
+        <tr>
+          <td>Mojito da Camilla</td>
+          <td>Bebidas</td>
+          <td>Recipiente grande</td>
+          <td>Não</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- FORMULÁRIO: sugestão de receita -->
+  <section class="caixa" id="sugestao">
+    <h2>Sugira uma receita</h2>
+    <form action="mailto:camillasbv@gmail.com?subject=Sugest%C3%A3o%20de%20receita" method="post" enctype="text/plain" novalidate>
+
+      <label for="nome">Seu nome</label>
+      <input type="text" id="nome" name="nome" placeholder="Digite seu nome">
+
+      <label for="email">Seu e-mail</label>
+      <input type="email" id="email" name="email" placeholder="voce@exemplo.com">
+
+      <label for="categoria">Categoria</label>
+      <select id="categoria" name="categoria">
+        <option value="massas">Massas</option>
+        <option value="entradas">Entradas</option>
+        <option value="lanches">Lanches</option>
+        <option value="tortas">Tortas</option>
+        <option value="sopas">Sopas</option>
+        <option value="bebidas">Bebidas</option>
+      </select>
+
+      <label for="mensagem">Sua receita</label>
+      <textarea id="mensagem" name="mensagem" rows="5" required placeholder="Conte ingredientes e modo de preparo"></textarea>
+
+      <p id="aviso-form" class="aviso"></p>
+
+      <button type="submit">Enviar sugestão</button>
+    </form>
+  </section>
+
+  <!-- RODAPÉ -->
+  <footer>
+    <p>Camilla na Cozinha • Rápido • Prático • Gostoso</p>
+    <p><a href="#topo">Voltar ao topo</a></p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,326 @@
+/* ==========================================
+   Camilla na Cozinha - style.css
+   Unidade 3: CSS (cores, fontes, espaçamentos,
+   bordas e organização visual)
+   Paleta: turquesa (escuro #0b5563, médio #14a8b8,
+   claro #e0f7f9) + coral (#f06a5b) + branco
+   ========================================== */
+
+
+/* ---------- 1. GERAL: cores e fontes ---------- */
+body {
+  font-family: "Comic Sans MS", "Comic Sans", cursive;  /* fonte do texto */
+  font-size: 16px;                          /* tamanho do texto */
+  color: #0b5563;                           /* cor do texto */
+  background-color: #e0f7f9;                /* azul claro no fundo da página */
+  margin: 0;                                /* tira a margem padrão do navegador */
+  padding: 0;
+  line-height: 1.6;                         /* espaço entre as linhas */
+}
+
+h1, h2, h3 {
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  color: #0b5563;                           /* azul escuro nos títulos */
+}
+
+
+/* ---------- 2. CABEÇALHO ---------- */
+header {
+  background-color: #14a8b8;                /* azul médio */
+  color: white;
+  text-align: center;
+  padding: 40px 20px;                       /* espaço DENTRO do cabeçalho */
+  border-bottom: 5px solid #f06a5b;         /* borda embaixo */
+}
+
+header h1 {
+  color: white;
+  font-size: 40px;
+  margin: 0 0 10px 0;                       /* espaço FORA do título */
+}
+
+header p {
+  font-size: 18px;
+  margin: 0;
+}
+
+
+/* ---------- 3. MENU ---------- */
+nav {
+  background-color: #0b5563;
+  text-align: center;
+  padding: 12px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;                    /* tira o sublinhado dos links */
+  margin: 0 12px;                           /* espaço dos lados de cada link */
+}
+
+nav a:hover {
+  color: #ffb4aa;                           /* muda de cor quando passa o mouse */
+}
+
+
+/* ---------- 4. APRESENTAÇÃO (texto de boas-vindas) ---------- */
+.apresentacao {
+  background-color: white;
+  max-width: 800px;
+  margin: 30px auto;                        /* "auto" centraliza a caixa */
+  padding: 20px;
+  border: 2px solid #14a8b8;
+  border-radius: 10px;                      /* cantos arredondados */
+  text-align: center;
+}
+
+
+/* ---------- 5. DISPOSIÇÃO DAS RECEITAS ---------- */
+main {
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+/* cada grupo de receitas (Salgados, Doces...) */
+.grupo h2 {
+  border-bottom: 3px solid #f06a5b;
+  padding-bottom: 5px;
+  margin-top: 40px;
+}
+
+/* os cartões ficam lado a lado dentro de cada grupo */
+.cartoes {
+  display: flex;                            /* coloca os cartões lado a lado */
+  flex-wrap: wrap;                          /* se não couber, vai para a linha de baixo */
+  gap: 20px;
+}
+
+
+/* ---------- 6. CARTÃO DE CADA RECEITA ---------- */
+article {
+  flex: 1 1 420px;                          /* cada cartão tem pelo menos 420px de largura */
+  background-color: white;
+  padding: 20px;
+  border: 2px solid #14a8b8;                /* borda azul */
+  border-radius: 10px;
+}
+
+article h2 {
+  margin-top: 0;
+  color: #14a8b8;
+}
+
+article h3 {
+  font-size: 18px;
+  border-bottom: 1px solid #14a8b8;         /* linha fininha embaixo do subtítulo */
+  padding-bottom: 4px;
+}
+
+article ul,
+article ol {
+  padding-left: 20px;
+}
+
+/* foto da receita: fica ao lado dos ingredientes, à direita */
+article img {
+  float: right;                             /* a foto vai para a direita e o texto contorna */
+  width: 45%;
+  height: 180px;
+  object-fit: cover;                        /* corta o excesso sem esticar */
+  border-radius: 10px;
+  margin: 0 0 10px 15px;                    /* espaço entre a foto e o texto */
+}
+
+/* o subtítulo (e sua linha) para antes da foto, em vez de passar por baixo dela */
+article h3 {
+  overflow: hidden;
+}
+
+/* os botões sempre ficam embaixo da foto */
+.botoes {
+  clear: both;
+}
+
+/* etiqueta da categoria (ex.: Salgado, Sobremesa) */
+.categoria {
+  display: inline-block;
+  background-color: #e0f7f9;
+  color: #0b5563;
+  font-size: 14px;
+  padding: 3px 10px;
+  border: 1px solid #f06a5b;
+  border-radius: 15px;
+}
+
+
+/* ---------- 7. RODAPÉ ---------- */
+footer {
+  background-color: #e0f7f9;                /* azul claro */
+  color: #0b5563;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+  border-top: 3px solid #f06a5b;
+}
+
+/* ---------- 8. TABELA E FORMULÁRIO ---------- */
+.caixa {
+  background-color: white;
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 20px;
+  border: 2px solid #14a8b8;
+  border-radius: 10px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;                /* junta as bordas das células */
+}
+
+th {
+  background-color: #14a8b8;
+  color: white;
+  text-align: left;
+}
+
+th, td {
+  padding: 10px;
+  border: 1px solid #14a8b8;
+}
+
+label {
+  display: block;                           /* cada rótulo em uma linha */
+  margin-top: 15px;
+  margin-bottom: 5px;
+  color: #0b5563;
+}
+
+input, select, textarea {
+  width: 100%;
+  box-sizing: border-box;                   /* o padding não aumenta a largura */
+  padding: 8px;
+  font-family: inherit;                     /* usa a mesma fonte da página */
+  font-size: 16px;
+  border: 2px solid #14a8b8;
+  border-radius: 8px;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 25px;
+  font-family: inherit;
+  font-size: 16px;
+  color: white;
+  background-color: #f06a5b;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #d4493a;
+}
+
+footer a {
+  color: #0b5563;
+}
+
+/* ---------- 9. BOTÕES DOS CARTÕES ---------- */
+.botoes {
+  display: flex;                            /* botões lado a lado */
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.botoes button {
+  margin-top: 0;
+  padding: 8px 18px;
+  font-size: 14px;
+}
+
+/* botão "Favoritar": só a borda, fundo branco */
+.btn-favorito {
+  background-color: white;
+  color: #d4493a;
+  border: 2px solid #f06a5b;
+}
+
+.btn-favorito:hover {
+  #fff0ed;
+}
+
+/* ---------- 10. FOTO DO MOJITO (copo comprido e fino) ---------- */
+#mojito img {
+  height: 240px;                            /* mais alta, para o copo caber */
+  object-fit: contain;                      /* mostra a foto inteira, sem cortar */
+  background-color: #e0f7f9;                /* fundo azul claro nas laterais */
+}
+
+/* ---------- 11. EFEITOS DO JAVASCRIPT ---------- */
+/* cartão destacado (sorteio e "Ver receita") */
+.destaque {
+  border-color: #f06a5b;
+  box-shadow: 0 0 0 4px #f06a5b;
+}
+
+/* receita favoritada */
+.favorita {
+  border-color: #f06a5b;
+}
+
+.btn-favorito.ativo {
+  background-color: #f06a5b;
+  color: white;
+}
+
+/* deixa um espacinho em cima do cartão quando a página rola até ele */
+article {
+  scroll-margin-top: 20px;
+}
+
+/* ---------- 12. BUSCA, FILTRO E AVISOS (JavaScript) ---------- */
+.busca-campos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.busca-campos input {
+  flex: 2 1 220px;
+  width: auto;
+}
+
+.busca-campos select {
+  flex: 1 1 160px;
+  width: auto;
+}
+
+.busca-campos button {
+  margin-top: 0;
+}
+
+.busca p {
+  margin: 10px 0 0 0;
+}
+
+/* cartões e grupos escondidos pela busca */
+.escondido {
+  display: none;
+}
+
+/* avisos do formulário */
+.aviso {
+  margin: 15px 0 0 0;
+}
+
+.aviso.erro {
+  color: #d4493a;
+  font-weight: bold;
+}
+
+.aviso.ok {
+  color: #0b5563;
+  font-weight: bold;
+}
